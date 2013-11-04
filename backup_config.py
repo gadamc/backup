@@ -15,9 +15,11 @@ class appConfig:
     config.read(configfile)
 
     self.fromserver = config.get('backup', 'fromserver')
+    self.fromprotocol = config.get('backup', 'fromprotocol')
     self.fromusername = config.get('backup', 'fromusername')
     self.frompassword = config.get('backup', 'frompassword')
     self.toserver = config.get('backup', 'toserver')
+    self.toprotocol = config.get('backup', 'toprotocol')
     self.tousername = config.get('backup', 'tousername')
     self.topassword = config.get('backup', 'topassword')
     self.dbbackuplist = config.get('backup', 'dbbackuplist')

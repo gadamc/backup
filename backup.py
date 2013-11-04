@@ -22,14 +22,16 @@ def postReplication(aConfig, timeframe):
 
 
   for adb in sourcedbs:
-    source_url = 'https://{0}:{1}@{2}/{3}'.format(
+    source_url = '{0}://{1}:{2}@{3}/{4}'.format(
+      aConfig.fromprotocol,
       aConfig.fromusername, 
       aConfig.frompassword, 
       aConfig.fromserver,
       adb
     )
 
-    target_url = 'https://{0}:{1}@{2}/{3}_{4}'.format(
+    target_url = '{0}://{1}:{2}@{3}/{4}_{5}'.format(
+      aConfig.toprotocol,
       aConfig.tousername, 
       aConfig.topassword, 
       aConfig.toserver,
@@ -45,7 +47,7 @@ def postReplication(aConfig, timeframe):
     auth = (aConfig.fromusername, aConfig.frompassword)
     headers = {'Content-type': 'application/json'}
 
-    post_url = 'https://{0}/_replicator'.format(aConfig.fromserver)
+    post_url = '{0}://{1}/_replicator'.format(aConfig.fromprotocol, aConfig.fromserver)
 
     r = requests.post(
       post_url,
