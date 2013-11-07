@@ -62,7 +62,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   
   parser.add_argument('config', help='[required] The configuration file',default='config.ini')
-  parser.add_argument('timeframe', help='[required] The timeframe is a word that describes how often this backup is run. For example, "weekly", "monthly", "daily" might be appropriate. The name of the backup database will be appened with this name. For example, if the source backup is "datadb", the backup for a timeframe="monthly" will be "datadb_monthly". It is up to the user to execute this script on a schedule that matches the timeframe value given on the command line.')
+  parser.add_argument('timeframe', help='[required] The timeframe is a word that describes how often this backup is run. For example, "weekly", "monthly", "daily" might be appropriate. The name of the backup database will be appened with this name. For example, if the source backup is "datadb", the backup for a timeframe="monthly" will be "datadb_monthly". It is up to the user to execute this script on a schedule that matches the timeframe value.')
 
   args = parser.parse_args()
 
